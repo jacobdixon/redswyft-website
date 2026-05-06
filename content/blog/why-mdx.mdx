@@ -1,0 +1,27 @@
+---
+title: "Why we write the blog in MDX"
+date: "2026-04-22"
+summary: "Markdown is great. JSX-in-Markdown is greater. Here's why our posts live as .mdx files in the same repo as the site."
+---
+
+Every blog needs an answer to "where do posts live?" The two common answers are
+"in a database, edited through a CMS" and "in flat files, edited in your editor
+of choice." We picked the second one, in MDX.
+
+## The case for MDX
+
+A few reasons we keep coming back to it:
+
+1. **Posts version with the code.** If we change the design of the post layout,
+   we can preview the change against every existing post in a single PR.
+2. **No second system to log into.** Writing a post is `git checkout -b`,
+   `vim content/blog/my-post.mdx`, push, done.
+3. **Embed components when you need them.** Most posts don't need anything
+   beyond text. The ones that do — interactive demos, custom callouts — get
+   them with a single import.
+
+## What we gave up
+
+Mostly, the ability to hand the keys to a non-technical editor. That's the
+honest tradeoff. If we ever need that, we'll layer a CMS on top — but for now,
+the smallest workflow that works is the right workflow.
